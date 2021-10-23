@@ -1,0 +1,26 @@
+font pango:monospace 8
+set $ws1 "terminal"
+set $ws2 "browser"
+set $ws3 "filemgr"
+set $ws4 "textedit"
+assign [class="URxvt"] $ws1
+assign [class="Firefox"] $ws2
+assign [class="Xfe"] $ws3
+assign [class="notepad"] $ws4
+bar {
+    position          bottom
+    status_command    i3status -c ~/.config/i3/i3status
+    font pango:JetBrains Mono 12
+    colors {
+        background #000000
+        statusline #ffffff
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #900000
+    }
+}
+exec urxvt
+exec firefox
+exec xfe
